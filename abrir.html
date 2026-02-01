@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Open Me 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FUENTE BONITA -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffc3a0,#ffdde1);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+    font-family:'Poppins',sans-serif;
+    overflow-y:auto;
+    padding:40px 20px;
+
+
+}
+
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* ❤️ CORAZONES */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:20px;
+    animation:floatUp linear infinite;
+    opacity:.8;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+/* TARJETA */
+.card{
+    background:rgba(255,255,255,.92);
+    border-radius:22px;
+    padding:25px;
+    max-width:420px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    position:relative;
+    z-index:10;
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:10px;
+}
+
+/* FOTO */
+.gif{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+    display:none;
+}
+
+/* PREGUNTA */
+.question{
+    font-size:22px;
+    margin:20px 0;
+    min-height:60px;
+}
+
+/* BOTONES */
+.buttons{
+    position:relative;
+    height:130px;
+}
+
+button{
+    border:none;
+    padding:12px 26px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    position:absolute;
+    transition:.3s ease;
+}
+
+#yesBtn{
+    background:#ff4d6d;
+    color:white;
+    left:50%;
+    transform:translateX(-120%);
+}
+
+#noBtn{
+    background:#adb5bd;
+    color:white;
+    left:50%;
+    transform:translateX(20%);
+}
+
+/* CARTA */
+.letter{
+    display:none;
+    font-family:'Dancing Script',cursive;
+    font-size:22px;
+    background:#fff0f3;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+}
+/* SCROLL PERSONALIZADO */
+.letter{
+    max-height: 220px;      /* Altura máxima de la carta */
+    overflow-y: auto;       /* Activa el scroll vertical */
+}
+
+/* Chrome, Edge, Safari */
+.letter::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter::-webkit-scrollbar-track {
+    background: #ffe0e9;
+    border-radius: 10px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: #ff4d6d;
+    border-radius: 10px;
+}
+
+.letter::-webkit-scrollbar-thumb:hover {
+    background: #e63950;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MÚSICA (EDITABLE) -->
+<audio id="music" loop>
+    <!-- CAMBIA AQUI EL ARCHIVO -->
+    <source src="wave to earth - love. (Official Lyric Video).mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>💖 Para Mi Maf 💖</h1>
+
+    <!-- FOTO DE USTEDES -->
+    <img src="Milk Mocha Bear GIF – Milk mocha bear – discover and share GIFs.gif" class="gif" id="gif">
+
+    <!-- PREGUNTA (EN INGLÉS) -->
+    <div class="question" id="question">
+        Will you be my Valentine? 💌
+    </div>
+
+    <div class="buttons">
+        <button id="yesBtn">shi 💕</button>
+        <button id="noBtn">nio 🙄</button>
+    </div>
+
+    <!-- CARTA -->
+    <div class="letter" id="letter">
+        Mi amor,<br><br>
+       Hola mi amor gracias por decir que si espero y te guste,
+       y espero estar contigo otro año mas quiero estar contigo todo este tiempo quiero vivir experiencias contigo
+       quiero saber cosas contigo quiero, quiero sentirme vivo contigo, cuando no estoy contigo siento que me falta algo siento que estoy perdido,
+       siento que no me motiva nada o no me emociona nada, lo unico que me emociona es hablar contigo y pensar qur haremos el siguiente dia o que hablaremos esta noche,
+        dare todo de mi para que estes segura que yo sere el hombre de tus sueños el hombre que quieres lo prometo, que solo me necesites a mi y nada mas.
+        Porque yo si estoy seguro en solo verte a los ojos ver tus ojitos me da tanta paz o solo oler tu aroma o semtir que estas ahi, me hacen mariposas en mi estomago
+        o solo no pienso en nada malo no me preocupa nada, solo pienso en ti solo pienso en que quiero a esa mujer quiero a esa niña tan bella quiero desperta un dia a su lado
+        mirar sus ojos tocar sus cachetes mover su pelito y decirle buenso dias amor, que esa sea mi primera accion del dia jiji.
+        Bueno por el momento es todo ayer fui un fail todo perdon por tu colchon ;( no fue con intencion. Pero en fin quiero que veas lo mucho que te amo quw te amo con todo mi alma...
+        <br><br>
+        Con amor tu MonkeyNovio 💕
+    </div>
+</div>
+
+<script>
+/* ❤️ CORAZONES FLOTANDO */
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (4 + Math.random()*4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,400);
+
+/* BOTONES */
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const question = document.getElementById("question");
+const letter = document.getElementById("letter");
+const photo = document.getElementById("gif");
+const music = document.getElementById("music");
+
+let yesScale = 1;
+let blocked = false;
+
+function moveNo(){
+    if(blocked) return;
+
+    const x = Math.random()*200 - 100;
+    const y = Math.random()*80 - 40;
+    noBtn.style.transform = `translate(${x}px,${y}px)`;
+
+    yesScale += 0.2;
+    yesBtn.style.transform = `translateX(-120%) scale(${yesScale})`;
+
+    question.textContent = "porque no ;3";
+    blocked = true;
+
+    setTimeout(()=>{
+        blocked = false;
+    },800);
+}
+
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("click",moveNo);
+
+yesBtn.addEventListener("click",()=>{
+    question.style.display="none";
+    yesBtn.style.display="none";
+    noBtn.style.display="none";
+    letter.style.display="block";
+    photo.style.display="block";
+    music.play();
+});
+</script>
+
+</body>
+</html>
